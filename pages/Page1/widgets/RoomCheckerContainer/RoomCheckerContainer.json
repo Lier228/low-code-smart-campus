@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "backgroundColor": "transparent",
+  "backgroundColor": "#f4f4f5",
   "borderColor": "#E0DEDE",
   "borderRadius": "0px",
   "borderWidth": "0",
@@ -45,6 +45,7 @@
   ],
   "dynamicBindingPathList": [],
   "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
   "flexVerticalAlignment": "stretch",
   "isCanvas": true,
   "isLoading": false,
@@ -71,7 +72,7 @@
   "shouldScrollContents": false,
   "topRow": 0,
   "type": "CONTAINER_WIDGET",
+  "version": 1,
   "widgetId": "29ef3f993a87",
-  "widgetName": "RoomCheckerContainer",
-  "version": 1
+  "widgetName": "RoomCheckerContainer"
 }
