@@ -1,0 +1,37 @@
+{
+  "animateLoading": true,
+  "bottomRow": 67,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "System Default",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "CheckResult",
+  "leftColumn": 8,
+  "originalBottomRow": 67,
+  "originalTopRow": 59,
+  "overflow": "NONE",
+  "parentColumnSpace": 16,
+  "parentId": "0",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 56,
+  "text": "{{(() => {\n  const result = appsmith.store.roomCheck;\n  if (!result || result.startText !== String(StartMinutes.text ?? \"\").trim() ||\n      result.durationText !== String(DurationMinutes.text ?? \"\").trim() ||\n      result.blocked !== RoomBlocked.isSwitchedOn) return \"\";\n  return result.message;\n})()}}",
+  "textAlign": "LEFT",
+  "textColor": "#0f172a",
+  "topRow": 59,
+  "truncateButtonColor": "#334155",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "verticalAlign": "CENTER",
+  "widgetId": "c1c7eb7a38a1",
+  "widgetName": "CheckResult"
+}

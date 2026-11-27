@@ -15,11 +15,16 @@
   "parentColumnSpace": 16,
   "parentRowSpace": 10,
   "dynamicBindingPathList": [],
-  "dynamicTriggerPathList": [],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
   "dynamicPropertyPathList": [],
   "text": "Check availability",
   "buttonVariant": "PRIMARY",
   "buttonColor": "#0f172a",
   "borderRadius": "6px",
-  "isDisabled": true
+  "isDisabled": false,
+  "onClick": "{{(() => {\n  const startText = String(StartMinutes.text ?? \"\").trim();\n  const durationText = String(DurationMinutes.text ?? \"\").trim();\n  const blocked = RoomBlocked.isSwitchedOn;\n  const start = Number(startText);\n  const duration = Number(durationText);\n  const end = start + duration;\n\n  function respond(available, reasonCode, message) {\n    return storeValue(\"roomCheck\", { startText, durationText, blocked, available, reasonCode, message }, false);\n  }\n\n  if (!startText || !Number.isInteger(start) || start < 0 || start >= 1440) {\n    return respond(false, \"INVALID_START\", \"Enter a whole start minute from 0 to 1439.\");\n  }\n  if (!durationText || !Number.isInteger(duration) || duration < 1 || duration > 120) {\n    return respond(false, \"DURATION\", \"Enter a duration of 1 to 120 whole minutes.\");\n  }\n  if (start <= 540) {\n    return respond(false, \"PAST_TIME\", \"Start time must be after 09:00.\");\n  }\n  if (end > 1440) {\n    return respond(false, \"INVALID_INTERVAL\", \"The interval must end by midnight.\");\n  }\n  if (blocked) {\n    return respond(false, \"BLOCKED\", \"Unavailable — Room A101 is blocked.\");\n  }\n  if (start < 660 && end > 600) {\n    return respond(false, \"OVERLAP\", \"Unavailable — this overlaps the 10:00–11:00 booking.\");\n  }\n  const clock = minutes => [Math.floor(minutes / 60), minutes % 60]\n    .map(part => String(part).padStart(2, \"0\")).join(\":\");\n  return respond(true, \"AVAILABLE\", \"Available — Room A101 is free from \" + clock(start) + \" to \" + clock(end) + \".\");\n})()}}"
 }
