@@ -12,12 +12,13 @@ function widget(name, ...folders) {
 const booking = widget('ExistingBookingsValue');
 const button = widget('CheckAvailability');
 const result = widget('CheckResult', 'ResultCard');
+const code = require('../code-based/rules.js');
 const cases = [
-  ['T1 free', 720, 30, false, 'AVAILABLE'],
+  ['T1 free', 720, 120, false, 'AVAILABLE'],
   ['T2 overlap', 630, 30, false, 'OVERLAP'],
-  ['T3 blocked', 720, 30, true, 'BLOCKED'],
+  ['T3 blocked', 660, 30, true, 'BLOCKED'],
   ['T4 zero duration', 720, 0, false, 'DURATION'],
-  ['T5 over duration limit', 720, 121, false, 'DURATION'],
+  ['T5 over duration limit', 660, 121, false, 'DURATION'],
   ['T6 past', 510, 30, false, 'PAST_TIME'],
   ['T7 adjacent', 660, 30, false, 'AVAILABLE'],
 ];
@@ -52,6 +53,10 @@ for (const [name, start, duration, blocked, expected] of cases) {
     const ctx = session();
     assert.equal(button.isDisabled, false);
     const outcome = check(ctx, start, duration, blocked);
+    const local = code.check(start, duration, blocked);
+    assert.equal(local.reasonCode, expected);
+    assert.equal(local.available, expected === 'AVAILABLE');
+    assert.ok(local.message.length > 0);
     assert.equal(outcome.reasonCode, expected);
     assert.equal(outcome.available, expected === 'AVAILABLE');
     assert.ok(outcome.message.length > 0);
@@ -62,7 +67,12 @@ for (const [name, start, duration, blocked, expected] of cases) {
 test('T8 checks preserve the booking list', () => {
   const ctx = session();
   assert.equal(ctx.ExistingBookingsValue.text, '10:00–11:00');
-  for (const [, start, duration, blocked] of cases) check(ctx, start, duration, blocked);
+  const initial = structuredClone(code.bookings);
+  for (const [, start, duration, blocked] of cases) {
+    check(ctx, start, duration, blocked);
+    code.check(start, duration, blocked);
+  }
+  assert.deepEqual(code.bookings, initial);
   assert.deepEqual(ctx.ExistingBookingsValue, booking);
   assert.deepEqual(Object.keys(ctx.appsmith.store), ['roomCheck']);
 });
@@ -72,9 +82,12 @@ test('boundary inputs, missing fields and stale results', () => {
   assert.equal(run(result.text, ctx), 'Select Check availability to see the result.');
   for (const [start, duration, expected] of [
     [720, 120, 'AVAILABLE'], [570, 30, 'AVAILABLE'], [540, 1, 'PAST_TIME'],
-    [1439, 1, 'AVAILABLE'], [1439, 2, 'INVALID_INTERVAL'],
+    [-720, 30, 'INVALID_START'], [1439, 30, 'INVALID_INTERVAL'], [1439, 1, 'AVAILABLE'], [1439, 2, 'INVALID_INTERVAL'],
     ['', 30, 'INVALID_START'], [720, '', 'DURATION'], [720, 1.5, 'DURATION'],
-  ]) assert.equal(check(ctx, start, duration, false).reasonCode, expected);
+  ]) {
+    assert.equal(check(ctx, start, duration, false).reasonCode, expected);
+    assert.equal(code.check(start, duration, false).reasonCode, expected);
+  }
   ctx.RoomBlocked.isSwitchedOn = true;
   assert.equal(run(result.text, ctx), 'Select Check availability to see the result.');
 });

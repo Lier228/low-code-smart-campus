@@ -1,0 +1,8 @@
+T1 Available — Room A101 is free from 12:00 to 14:00.
+T2 Unavailable — overlaps an existing booking.
+T3 Unavailable — Room A101 is blocked.
+T4 Enter a duration of 1 to 120 whole minutes.
+T5 Enter a duration of 1 to 120 whole minutes.
+T6 Start time must be after 09:00.
+T7 Available — Room A101 is free from 11:00 to 11:30.
+T8 booking before and after: 10:00–11:00

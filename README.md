@@ -9,3 +9,8 @@ This app is built using Appsmith. Turn any datasource into an internal app in mi
 ##### You can visit the application using the below link
 
 ###### [![](https://assets.appsmith.com/git-sync/Buttons.svg) ](https://m-semey.appsmith.com/applications/6b09b04ea367592a116f5081/pages/6b09b04ea367592a116f5083) [![](https://assets.appsmith.com/git-sync/Buttons2.svg)](https://m-semey.appsmith.com/applications/6b09b04ea367592a116f5081/pages/6b09b04ea367592a116f5083/edit)
+## Practice 12 submission
+
+[Report (PDF)](submission/Report.pdf) · [Report and evidence links](submission/Report.md) · [JavaScript acceptance tests](tests/checker.test.cjs) · [Code-based and Appsmith exports](submission/export/)
+
+Run `node --test tests/checker.test.cjs` from this directory. Open `submission/export/Smart-Campus.html` for the offline code-based demo.
