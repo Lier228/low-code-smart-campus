@@ -4,7 +4,7 @@
   "type": "SWITCH_WIDGET",
   "version": 1,
   "key": "RoomBlocked",
-  "parentId": "0",
+  "parentId": "83fe01729f01",
   "renderMode": "CANVAS",
   "isVisible": true,
   "isLoading": false,

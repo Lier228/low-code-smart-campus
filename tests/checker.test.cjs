@@ -5,7 +5,7 @@ const path = require('node:path');
 const vm = require('node:vm');
 
 function widget(name) {
-  const file = path.join(__dirname, '..', 'pages', 'Page1', 'widgets', name + '.json');
+  const file = path.join(__dirname, '..', 'pages', 'Page1', 'widgets', 'RoomCheckerContainer', name + '.json');
   return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 

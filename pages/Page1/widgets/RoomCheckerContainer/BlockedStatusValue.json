@@ -1,7 +1,14 @@
 {
   "animateLoading": true,
-  "bottomRow": 28,
-  "dynamicBindingPathList": [],
+  "bottomRow": 32,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
@@ -10,24 +17,24 @@
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "ReferenceTimeValue",
+  "key": "BlockedStatusValue",
   "leftColumn": 34,
-  "originalBottomRow": 28,
-  "originalTopRow": 24,
+  "originalBottomRow": 32,
+  "originalTopRow": 28,
   "overflow": "NONE",
   "parentColumnSpace": 16,
-  "parentId": "0",
+  "parentId": "83fe01729f01",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "rightColumn": 56,
-  "text": "09:00",
+  "text": "{{RoomBlocked.isSwitchedOn ? \"Blocked\" : \"Not blocked\"}}",
   "textAlign": "RIGHT",
-  "textColor": "#0f172a",
-  "topRow": 24,
+  "textColor": "{{RoomBlocked.isSwitchedOn ? \"#be123c\" : \"#047857\"}}",
+  "topRow": 28,
   "truncateButtonColor": "#334155",
   "type": "TEXT_WIDGET",
   "version": 1,
   "verticalAlign": "CENTER",
-  "widgetId": "c91694743c16",
-  "widgetName": "ReferenceTimeValue"
+  "widgetId": "61b41bd73106",
+  "widgetName": "BlockedStatusValue"
 }

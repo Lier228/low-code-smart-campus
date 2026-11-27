@@ -1,14 +1,7 @@
 {
   "animateLoading": true,
-  "bottomRow": 32,
-  "dynamicBindingPathList": [
-    {
-      "key": "text"
-    },
-    {
-      "key": "textColor"
-    }
-  ],
+  "bottomRow": 36,
+  "dynamicBindingPathList": [],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
@@ -17,24 +10,24 @@
   "fontStyle": "BOLD",
   "isLoading": false,
   "isVisible": true,
-  "key": "BlockedStatusValue",
+  "key": "ExistingBookingsValue",
   "leftColumn": 34,
-  "originalBottomRow": 32,
-  "originalTopRow": 28,
+  "originalBottomRow": 36,
+  "originalTopRow": 32,
   "overflow": "NONE",
   "parentColumnSpace": 16,
-  "parentId": "0",
+  "parentId": "83fe01729f01",
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "rightColumn": 56,
-  "text": "{{RoomBlocked.isSwitchedOn ? \"Blocked\" : \"Not blocked\"}}",
+  "text": "10:00–11:00",
   "textAlign": "RIGHT",
-  "textColor": "{{RoomBlocked.isSwitchedOn ? \"#be123c\" : \"#047857\"}}",
-  "topRow": 28,
+  "textColor": "#0f172a",
+  "topRow": 32,
   "truncateButtonColor": "#334155",
   "type": "TEXT_WIDGET",
   "version": 1,
   "verticalAlign": "CENTER",
-  "widgetId": "61b41bd73106",
-  "widgetName": "BlockedStatusValue"
+  "widgetId": "b43102ec47ec",
+  "widgetName": "ExistingBookingsValue"
 }

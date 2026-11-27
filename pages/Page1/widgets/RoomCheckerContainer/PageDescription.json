@@ -1,7 +1,7 @@
 {
   "widgetName": "PageDescription",
   "widgetId": "016104b45b23",
-  "parentId": "0",
+  "parentId": "83fe01729f01",
   "type": "TEXT_WIDGET",
   "version": 1,
   "text": "Check whether a time window is free for one room. This tool only checks availability — it does not create, save, or confirm a booking.",
