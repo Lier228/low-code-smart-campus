@@ -1,0 +1,40 @@
+{
+  "animateLoading": true,
+  "bottomRow": 12,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicPropertyPathList": [],
+  "dynamicTriggerPathList": [],
+  "fontFamily": "System Default",
+  "fontSize": "1rem",
+  "fontStyle": "BOLD",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "CheckResult",
+  "leftColumn": 1,
+  "originalBottomRow": 12,
+  "originalTopRow": 4,
+  "overflow": "NONE",
+  "parentColumnSpace": 12,
+  "parentId": "732354110646",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 63,
+  "text": "{{(() => {\n  const result = appsmith.store.roomCheck;\n  if (!result || result.startText !== String(StartMinutes.text ?? \"\").trim() ||\n      result.durationText !== String(DurationMinutes.text ?? \"\").trim() ||\n      result.blocked !== RoomBlocked.isSwitchedOn) return \"Select Check availability to see the result.\";\n  return result.message;\n})()}}",
+  "textAlign": "LEFT",
+  "textColor": "{{ CheckResult.text === appsmith.store.roomCheck?.message ? (appsmith.store.roomCheck.available ? \"#146044\" : \"#9F2948\") : \"#465C64\" }}",
+  "topRow": 4,
+  "truncateButtonColor": "#334155",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "verticalAlign": "CENTER",
+  "widgetId": "c1c7eb7a38a1",
+  "widgetName": "CheckResult"
+}

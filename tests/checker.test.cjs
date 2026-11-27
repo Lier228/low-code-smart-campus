@@ -4,14 +4,14 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 
-function widget(name) {
-  const file = path.join(__dirname, '..', 'pages', 'Page1', 'widgets', 'RoomCheckerContainer', name + '.json');
+function widget(name, ...folders) {
+  const file = path.join(__dirname, '..', 'pages', 'Page1', 'widgets', 'RoomCheckerContainer', ...folders, name + '.json');
   return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
 const booking = widget('ExistingBookingsValue');
 const button = widget('CheckAvailability');
-const result = widget('CheckResult');
+const result = widget('CheckResult', 'ResultCard');
 const cases = [
   ['T1 free', 720, 30, false, 'AVAILABLE'],
   ['T2 overlap', 630, 30, false, 'OVERLAP'],
@@ -69,12 +69,12 @@ test('T8 checks preserve the booking list', () => {
 
 test('boundary inputs, missing fields and stale results', () => {
   const ctx = session();
-  assert.equal(run(result.text, ctx), '');
+  assert.equal(run(result.text, ctx), 'Select Check availability to see the result.');
   for (const [start, duration, expected] of [
     [720, 120, 'AVAILABLE'], [570, 30, 'AVAILABLE'], [540, 1, 'PAST_TIME'],
     [1439, 1, 'AVAILABLE'], [1439, 2, 'INVALID_INTERVAL'],
     ['', 30, 'INVALID_START'], [720, '', 'DURATION'], [720, 1.5, 'DURATION'],
   ]) assert.equal(check(ctx, start, duration, false).reasonCode, expected);
   ctx.RoomBlocked.isSwitchedOn = true;
-  assert.equal(run(result.text, ctx), '');
+  assert.equal(run(result.text, ctx), 'Select Check availability to see the result.');
 });
