@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 73,
+  "bottomRow": 36,
   "dynamicBindingPathList": [],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
@@ -23,7 +23,7 @@
   "text": "Existing bookings",
   "textAlign": "LEFT",
   "textColor": "#334155",
-  "topRow": 69,
+  "topRow": 32,
   "truncateButtonColor": "#334155",
   "type": "TEXT_WIDGET",
   "version": 1,

@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 65,
+  "bottomRow": 28,
   "dynamicBindingPathList": [],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
@@ -23,7 +23,7 @@
   "text": "Reference time",
   "textAlign": "LEFT",
   "textColor": "#334155",
-  "topRow": 61,
+  "topRow": 24,
   "truncateButtonColor": "#334155",
   "type": "TEXT_WIDGET",
   "version": 1,

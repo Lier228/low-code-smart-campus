@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 61,
+  "bottomRow": 24,
   "dynamicBindingPathList": [],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
@@ -23,7 +23,7 @@
   "text": "Room A101",
   "textAlign": "LEFT",
   "textColor": "#0f172a",
-  "topRow": 56,
+  "topRow": 19,
   "truncateButtonColor": "#334155",
   "type": "TEXT_WIDGET",
   "version": 1,

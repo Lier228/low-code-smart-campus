@@ -1,7 +1,14 @@
 {
   "animateLoading": true,
-  "bottomRow": 69,
-  "dynamicBindingPathList": [],
+  "bottomRow": 32,
+  "dynamicBindingPathList": [
+    {
+      "key": "text"
+    },
+    {
+      "key": "textColor"
+    }
+  ],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
   "dynamicTriggerPathList": [],
@@ -20,10 +27,10 @@
   "parentRowSpace": 10,
   "renderMode": "CANVAS",
   "rightColumn": 56,
-  "text": "Not blocked",
+  "text": "{{RoomBlocked.isSwitchedOn ? \"Blocked\" : \"Not blocked\"}}",
   "textAlign": "RIGHT",
-  "textColor": "#047857",
-  "topRow": 65,
+  "textColor": "{{RoomBlocked.isSwitchedOn ? \"#be123c\" : \"#047857\"}}",
+  "topRow": 28,
   "truncateButtonColor": "#334155",
   "type": "TEXT_WIDGET",
   "version": 1,

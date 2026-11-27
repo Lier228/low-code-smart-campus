@@ -1,6 +1,6 @@
 {
   "animateLoading": true,
-  "bottomRow": 69,
+  "bottomRow": 32,
   "dynamicBindingPathList": [],
   "dynamicHeight": "FIXED",
   "dynamicPropertyPathList": [],
@@ -23,7 +23,7 @@
   "text": "Blocked status",
   "textAlign": "LEFT",
   "textColor": "#334155",
-  "topRow": 65,
+  "topRow": 28,
   "truncateButtonColor": "#334155",
   "type": "TEXT_WIDGET",
   "version": 1,
