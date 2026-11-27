@@ -1,10 +1,26 @@
-# Smart Campus · Comparing code-based and low-code development
+# AI-Driven Software Engineering Practice #13, Semey Madiyar, 25B030014
 
-Software Engineering, Lesson 12 · Practice work 12 · 27 November 2026 · Semey Madiyar
+**To** · b.azimkhanov@kbtu.kz  
+**From** · Semey Madiyar, 25B030014  
+**Class** · Friday, 14:00–17:00  
+**Date** · 27 November 2026
 
-Both implementations passed the eight common acceptance cases. The JavaScript tests exercise the code-based rule engine and the exported Appsmith button and result bindings. Chrome also exercised the code-based form end to end. Six student screenshots document separate observations in the Appsmith interface.
+Dear Instructor,
 
-[Published Appsmith application](https://m-semey.appsmith.com/app/smart-campus-low-code/page1-6b09b04ea367592a116f5083?branch=master&environment=production) · [Offline HTML demo](export/Smart-Campus.html) · [Appsmith Git export](export/Appsmith.bundle)
+For Lesson 12, I compared two versions of the Smart Campus checker from Practice 11. Both use Room A101, a reference time of 09:00 and one booking from 10:00 to 11:00. I kept those details fixed so I could enter the same request in JavaScript and Appsmith and compare their answers.
+
+The most useful test for me was a 30-minute request starting at 11:00. Both versions showed that the room was free until 11:30. When I switched on “Room blocked” in Appsmith and repeated the request, the answer changed to “Unavailable” and gave the reason. My six screenshots record the results I saw in Appsmith. The shared JavaScript suite passed all eight required cases for both implementations, and the code-based form also passed all eight checks in Chrome.
+
+**For this project, I would choose the code-based version.** If the 10:00 booking moves, I can change one entry in JavaScript and both the schedule on screen and the availability check use the new time. In my Appsmith version I would have to update the text widget and the button logic separately. I would also use the standalone HTML for a class demonstration because it opens offline. I found Appsmith useful for arranging the form and adjusting the result card visually. I would choose it for a prototype where the team mainly expects to change the layout.
+
+I used OpenAI Codex desktop 26.1120.6357.0 (GPT-6) to help implement the forms, write the shared tests and prepare this report. The appendix includes my requirements, results, engineering comparison and security review. The published Appsmith demo requires a workspace sign-in; the offline demo is included for review.
+
+[Project repository](https://github.com/Lier228/low-code-smart-campus) · [Published Appsmith demo](https://m-semey.appsmith.com/app/smart-campus-low-code/page1-6b09b04ea367592a116f5083?branch=master&environment=production) · [Downloadable files](https://github.com/Lier228/low-code-smart-campus/tree/master/submission/export)
+
+Best regards,  
+Semey Madiyar
+
+## Appendix · Practice 12 evidence
 
 ## 1. Frozen baseline
 
@@ -72,8 +88,6 @@ Reproduce the common test with Node.js 22 from the repository root: `node --test
 | Ongoing cost | Local execution requires no hosting subscription. Public hosting was not measured. | No paid feature was identified in the submitted workflow. Actual plan, limits and future hosting cost are unverified. |
 
 The timing entries are elapsed checkpoints and measured test execution, not a controlled comparison of human effort. No unresolved functional failure was observed in the common cases. One submission-access limitation remains: the published Appsmith URL requires sign-in in a fresh browser.
-
-**Recommendation.** Choose the code-based version for this one-room checker. Both implementations met the tested contract, but a reviewer can run the exported HTML offline, and the code-based version keeps the displayed and evaluated booking in one place. Appsmith is a reasonable choice when the team already works in its editor and needs to adjust the screen visually.
 
 ## 7. Security review and AI use
 
