@@ -21,13 +21,13 @@
   "label": "Start (minutes after midnight)",
   "labelPosition": "Top",
   "labelTextSize": "0.875rem",
-  "labelTextColor": "#334155",
+  "labelTextColor": "#21474D",
   "placeholderText": "660 = 11:00",
   "defaultText": "",
   "isDisabled": false,
   "isRequired": false,
   "resetOnSubmit": false,
-  "accentColor": "#334155",
-  "borderRadius": "6px",
+  "accentColor": "#00736B",
+  "borderRadius": "8px",
   "boxShadow": "none"
 }

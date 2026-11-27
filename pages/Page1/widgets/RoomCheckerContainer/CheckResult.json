@@ -4,6 +4,9 @@
   "dynamicBindingPathList": [
     {
       "key": "text"
+    },
+    {
+      "key": "textColor"
     }
   ],
   "dynamicHeight": "FIXED",
@@ -26,7 +29,7 @@
   "rightColumn": 56,
   "text": "{{(() => {\n  const result = appsmith.store.roomCheck;\n  if (!result || result.startText !== String(StartMinutes.text ?? \"\").trim() ||\n      result.durationText !== String(DurationMinutes.text ?? \"\").trim() ||\n      result.blocked !== RoomBlocked.isSwitchedOn) return \"\";\n  return result.message;\n})()}}",
   "textAlign": "LEFT",
-  "textColor": "#0f172a",
+  "textColor": "{{ appsmith.store.roomCheck?.available ? \"#146044\" : \"#9F2948\" }}",
   "topRow": 59,
   "truncateButtonColor": "#334155",
   "type": "TEXT_WIDGET",
